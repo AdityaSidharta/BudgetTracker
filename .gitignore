@@ -108,4 +108,4 @@ venv.bak/
 
 # User defined folder exclusion
 data/
-env/
+env/saltedge.env

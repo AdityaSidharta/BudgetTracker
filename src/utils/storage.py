@@ -5,7 +5,7 @@ from google.cloud import storage
 from loguru import logger
 
 from src.utils.directory import CREDENTIALS_PATH, DATA_PATH
-from src.utils.envs import config
+from src.utils.config import config
 
 
 class Storage:
