@@ -9,4 +9,3 @@ The goal of this repository is to provide an automated system for Budget Trackin
 - Automated Monthly Runner and Email Reports
 
 Support for multiple accounts under multiple bank will be implemeented in the next release.
-

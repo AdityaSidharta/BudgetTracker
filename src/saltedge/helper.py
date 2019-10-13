@@ -3,6 +3,7 @@ import json
 
 class SaltEdgeHelper:
     def __init__(self):
+        self.parent_path = "https://www.saltedge.com/"
         self.customers_path = "https://www.saltedge.com/api/v5/customers"
         self.connect_session_path = "https://www.saltedge.com/api/v5/connect_sessions/create"
         self.connection_path = "https://www.saltedge.com/api/v5/connections"

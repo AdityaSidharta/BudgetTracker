@@ -13,6 +13,8 @@ python-dotenv = "*"
 google-cloud-storage = "*"
 loguru = "*"
 joblib = "*"
+fire = "*"
+emoji = "*"
 
 [requires]
 python_version = "3.7"

@@ -4,8 +4,8 @@ import joblib
 from google.cloud import storage
 from loguru import logger
 
-from src.utils.directory import CREDENTIALS_PATH, DATA_PATH
 from src.utils.config import config
+from src.utils.directory import DATA_PATH
 
 
 class Storage:
