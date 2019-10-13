@@ -13,4 +13,5 @@ class Config:
         self.SECRET = os.getenv('SECRET')
         self.CUSTOMER_ID = '1'
 
+
 config = Config()
