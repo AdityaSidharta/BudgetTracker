@@ -16,6 +16,8 @@ joblib = "*"
 fire = "*"
 emoji = "*"
 oyaml = "*"
+streamlit = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.7"

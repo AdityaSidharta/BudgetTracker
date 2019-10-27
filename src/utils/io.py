@@ -8,4 +8,5 @@ def save_yaml(file, path):
 
 def load_yaml(path):
     with open(path, 'r+') as f:
-        yaml.safe_load(f)
+        value = yaml.safe_load(f)
+    return value

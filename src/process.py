@@ -6,7 +6,8 @@ from src.utils.transactions import load_transaction, get_accounts, remove_accoun
     map_category, map_description, map_type, get_emoji, get_filename
 from src.utils.io import load_yaml
 
-# TODO: Add logger for process
+
+# TODO: Add logger for process, use logsensei
 def main(year: int = None, month: int = None):
     expense_dict = load_yaml(EXPENSE_YAML_PATH)
     config_dict = load_yaml(CONFIG_YAML_PATH)
@@ -17,7 +18,7 @@ def main(year: int = None, month: int = None):
 
     full_df = full_df[['id', 'account_id', 'made_on', 'amount', 'description', 'category', 'type']]
     full_df = remove_accounts(full_df, accounts)
-    full_df = remove_keywords(full_df, config_dict['KEYWORD_ACCOUNTS'])
+    full_df = remove_keywords(full_df, config_dict['FILTER_KEYWORDS'])
 
     expense_df = full_df[full_df["amount"] < 0.0].copy().reset_index(drop=True)
     expense_df['true_category'] = 'OTHER_EXPENSES'
