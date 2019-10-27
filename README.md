@@ -8,4 +8,4 @@ The goal of this repository is to provide an automated system for Budget Trackin
 - Integration with Google Cloud Storage for Backup
 - Automated Monthly Runner and Email Reports
 
-Support for multiple accounts under multiple bank will be implemeented in the next release.
+Support for multiple accounts under multiple bank will be implemented in the next release.

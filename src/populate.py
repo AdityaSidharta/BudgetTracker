@@ -20,7 +20,7 @@ def main(year: int = None, month: int = None):
     if (year is None) and (month is None):
         year = today_year
         month = today_month - 1
-    else:
+    elif ((year is None) and (month is not None)) or ((year is not None) and (month is None)):
         raise ValueError("year and month must be specified together")
     if year > today_year:
         raise AssertionError("Could not get information for the current month / future")
