@@ -1,0 +1,127 @@
+FOOD_AND_DRINKS:
+  emoji: ':hamburger:'
+  mapping:
+  - food_and_dining
+  - alcohol_and_bars
+  - cafes_and_restaurants
+TAXI:
+  emoji: ':taxi:'
+  mapping:
+  - auto_and_transport
+  - taxi
+PUBLIC_TRANSPORT:
+  emoji: ':bus:'
+  mapping:
+  - public_transportation
+SHOPPING:
+  emoji: ':purse:'
+  mapping:
+  - office_supplies
+  - shopping
+  - electronics_and_software
+  - sporting_goods
+  - clothing
+GROCERIES:
+  emoji: ':apple:'
+  mapping:
+  - groceries
+GIFTS_AND_CHARITY:
+  emoji: ':gift_heart:'
+  mapping:
+  - gifts_and_donations
+  - charity
+  - gifts
+ENTERTAINMENT:
+  emoji: ':microphone:'
+  mapping:
+  - entertainment
+  - amusement
+  - arts
+  - games
+  - movies_and_music
+  - newspapers_and_magazines
+OTHER_EXPENSES:
+  emoji: '::'
+  mapping:
+  - uncategorized
+BILLS_AND_UTILITIES:
+  emoji: ':newspaper:'
+  mapping:
+  - bills_and_utilities
+  - internet
+  - phone
+  - television
+  - utilities
+BUSINESS:
+  emoji: ':briefcase:'
+  mapping:
+  - business_services
+  - advertising
+CASH:
+  emoji: ':dollar:'
+  mapping: []
+EDUCATION:
+  emoji: ':school:'
+  mapping:
+  - education
+  - books_and_supplies
+  - tuition
+FAMILY:
+  emoji: ':family:'
+  mapping: []
+FEE:
+  emoji: ':x:'
+  mapping:
+  - provider_fee
+  - loans
+  - service_fee
+  - fees_and_charges
+HEALTH:
+  emoji: ':ambulance:'
+  mapping:
+  - health_and_fitness
+  - doctor
+  - personal_care
+  - pharmacy
+  - sports
+  - wellness
+INSURANCE:
+  emoji: '::'
+  mapping:
+  - insurance
+  - car_insurance
+  - health_insurance
+  - life_insurance
+  - property_insurance
+LOANS:
+  emoji: '::'
+  mapping:
+  - student_loan
+PERSONAL_CARE:
+  emoji: ':barber:'
+  mapping: []
+HOUSING_AND_RENTAL:
+  emoji: ':house:'
+  mapping:
+  - rent
+  - home
+  - home_improvement
+  - home_services
+  - home_supplies
+  - mortgage
+TRAVEL:
+  emoji: ':airplane:'
+  mapping:
+  - travel
+  - hotel
+  - transportation
+  - vacation
+TAXES:
+  emoji: '::'
+  mapping: []
+SUBSCRIPTIONS:
+  emoji: '::'
+  mapping: []
+TRANSFER_EXPENSES:
+  emoji: '::'
+  mapping: []

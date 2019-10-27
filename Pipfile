@@ -15,6 +15,7 @@ loguru = "*"
 joblib = "*"
 fire = "*"
 emoji = "*"
+oyaml = "*"
 
 [requires]
 python_version = "3.7"

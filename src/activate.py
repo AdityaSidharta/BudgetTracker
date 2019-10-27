@@ -1,6 +1,6 @@
 from loguru import logger
 
-from src.saltedge.functions import get_customer, connect_session
+from src.utils.functions import get_customer, connect_session
 from src.utils.config import config
 
 

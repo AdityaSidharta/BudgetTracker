@@ -5,7 +5,7 @@ import webbrowser
 import pandas as pd
 import requests
 
-from src.saltedge.helper import saltedge
+from src.utils.helper import saltedge
 from src.utils.config import config
 from src.utils.dataframe import add_column_if_not_exists
 from src.utils.dataframe import saltedge_columns

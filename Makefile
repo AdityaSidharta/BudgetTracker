@@ -1,13 +1,17 @@
-.PHONY: activate populate process visualize
+.PHONY: setup activate populate process visualize send
 
 SHELL := /bin/bash
 
 help:
+	@echo "setup - Setup the repository"
 	@echo "activate - Performing activation for SaltEdge Account"
 	@echo "populate - Downloading Raw Dataset from the SaltEdge Account"
 	@echo "process - Processing the Downloaded Transactional Dataset"
 	@echo "visualize - Perfomring Visualization of the Transformed Dataset"
 	@echo "send - Sending the Visualization on the target email"
+
+setup:
+	bash bin/setup.sh
 
 activate:
 	export PYTHONPATH=${PWD} && pipenv run python src/activate.py

@@ -1,0 +1,22 @@
+SALARY:
+  emoji: '::'
+  mapping:
+  - income
+  - paycheck
+  - bonus
+OTHER_INCOME:
+  emoji: '::'
+  mapping: []
+INVESTMENTS:
+  emoji: '::'
+  mapping:
+  - investment_income
+CASHBACK:
+  emoji: '::'
+  mapping: []
+REFUNDS:
+  emoji: '::'
+  mapping: []
+TRANSFER_INCOME:
+  emoji: '::'
+  mapping: []
