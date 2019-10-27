@@ -13,6 +13,7 @@ INVESTMENTS:
   emoji: '::'
   mapping:
   - investment_income
+  - dividends
   description: []
 CASHBACK:
   emoji: '::'
@@ -25,4 +26,10 @@ REFUNDS:
 TRANSFER_INCOME:
   emoji: '::'
   mapping: []
+  description:
+    - PAYLAH
+INTEREST:
+  emoji: '::'
+  mapping:
+    - interest
   description: []

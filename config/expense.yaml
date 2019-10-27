@@ -70,7 +70,8 @@ BUSINESS:
 CASH:
   emoji: ':dollar:'
   mapping: []
-  description: []
+  description:
+    - PAYLAH
 EDUCATION:
   emoji: ':school:'
   mapping:
