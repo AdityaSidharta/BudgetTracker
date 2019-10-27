@@ -4,15 +4,18 @@ FOOD_AND_DRINKS:
   - food_and_dining
   - alcohol_and_bars
   - cafes_and_restaurants
+  description: []
 TAXI:
   emoji: ':taxi:'
   mapping:
   - auto_and_transport
   - taxi
+  description: []
 PUBLIC_TRANSPORT:
   emoji: ':bus:'
   mapping:
   - public_transportation
+  description: []
 SHOPPING:
   emoji: ':purse:'
   mapping:
@@ -21,16 +24,19 @@ SHOPPING:
   - electronics_and_software
   - sporting_goods
   - clothing
+  description: []
 GROCERIES:
   emoji: ':apple:'
   mapping:
   - groceries
+  description: []
 GIFTS_AND_CHARITY:
   emoji: ':gift_heart:'
   mapping:
   - gifts_and_donations
   - charity
   - gifts
+  description: []
 ENTERTAINMENT:
   emoji: ':microphone:'
   mapping:
@@ -40,10 +46,12 @@ ENTERTAINMENT:
   - games
   - movies_and_music
   - newspapers_and_magazines
+  description: []
 OTHER_EXPENSES:
   emoji: '::'
   mapping:
   - uncategorized
+  description: []
 BILLS_AND_UTILITIES:
   emoji: ':newspaper:'
   mapping:
@@ -52,23 +60,28 @@ BILLS_AND_UTILITIES:
   - phone
   - television
   - utilities
+  description: []
 BUSINESS:
   emoji: ':briefcase:'
   mapping:
   - business_services
   - advertising
+  description: []
 CASH:
   emoji: ':dollar:'
   mapping: []
+  description: []
 EDUCATION:
   emoji: ':school:'
   mapping:
   - education
   - books_and_supplies
   - tuition
+  description: []
 FAMILY:
   emoji: ':family:'
   mapping: []
+  description: []
 FEE:
   emoji: ':x:'
   mapping:
@@ -76,6 +89,7 @@ FEE:
   - loans
   - service_fee
   - fees_and_charges
+  description: []
 HEALTH:
   emoji: ':ambulance:'
   mapping:
@@ -85,6 +99,7 @@ HEALTH:
   - pharmacy
   - sports
   - wellness
+  description: []
 INSURANCE:
   emoji: '::'
   mapping:
@@ -93,13 +108,16 @@ INSURANCE:
   - health_insurance
   - life_insurance
   - property_insurance
+  description: []
 LOANS:
   emoji: '::'
   mapping:
   - student_loan
+  description: []
 PERSONAL_CARE:
   emoji: ':barber:'
   mapping: []
+  description: []
 HOUSING_AND_RENTAL:
   emoji: ':house:'
   mapping:
@@ -109,6 +127,7 @@ HOUSING_AND_RENTAL:
   - home_services
   - home_supplies
   - mortgage
+  description: []
 TRAVEL:
   emoji: ':airplane:'
   mapping:
@@ -116,12 +135,16 @@ TRAVEL:
   - hotel
   - transportation
   - vacation
+  description: []
 TAXES:
   emoji: '::'
   mapping: []
+  description: []
 SUBSCRIPTIONS:
   emoji: '::'
   mapping: []
+  description: []
 TRANSFER_EXPENSES:
   emoji: '::'
   mapping: []
+  description: []
