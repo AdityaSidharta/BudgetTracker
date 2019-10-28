@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime as dt
 
+import matplotlib
 import pandas as pd
 from src.utils.datetime import MONTHS
 from src.utils.directory import FINAL_PATH, EXPENSE_YAML_PATH, INCOME_YAML_PATH
@@ -9,7 +10,9 @@ import os
 from src.utils.io import load_yaml
 from emoji import emojize
 from src.utils.grouping import get_category
-from src.utils.streamlit import plot_category, display_category#, plot_timeline, plot_historical_timeline, display_dataframe
+from src.utils.streamlit import plot_category, display_category, plot_timeline#, plot_timeline, plot_historical_timeline, display_dataframe
+
+matplotlib.use('Agg')
 
 
 def main(year: int = None, month: int = None):
@@ -52,7 +55,7 @@ def main(year: int = None, month: int = None):
 
     st.header("Expenses Timeline")
     timeline_option = st.multiselect('Category', list(expense_dict.keys()), default=[])
-    plot_timeline(expense_df, timeline_option)
+    plot_timeline(expense_df, timeline_option, expense_dict)
 
     st.header("Historical Timeline")
     historical_option = st.multiselect('Category', list(expense_dict.keys()), default=[])

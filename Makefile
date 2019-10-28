@@ -26,4 +26,4 @@ send:
 	export PYTHONPATH=${PWD} && pipenv run python src/send.py --year=${YEAR} --month=${MONTH} --email=${EMAIL}
 
 visualize:
-	export PYTHONPATH=${PWD} && pipenv run python src/visualize.py --year=${YEAR} --month=${MONTH}
+	export PYTHONPATH=${PWD} && pipenv run streamlit run src/visualize.py --year=${YEAR} --month=${MONTH}
