@@ -15,7 +15,9 @@ from src.utils.streamlit import (
     plot_category,
     display_category,
     plot_timeline,
-)  # , plot_timeline, plot_historical_timeline, display_dataframe
+    plot_historical_timeline,
+    display_dataframe
+)
 
 matplotlib.use("Agg")
 
@@ -64,15 +66,19 @@ def main(year: int = None, month: int = None):
 
     st.header("Historical Timeline")
     historical_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
-    plot_historical_timeline(year, month, historical_option)
+    plot_historical_timeline(year, month, historical_option, expense_dict)
 
     st.header("Expenses Transaction DataFrame")
-    expense_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
-    display_dataframe(expense_df, expense_option)
+    expense_option = st.selectbox("Category", list(expense_dict.keys()), default=[])
+    expense_sort_option = st.selectbox("Sort", ['Date', 'Name', 'Amount'], default='Date')
+    expense_order_option = st.selectbox("Order", ['Ascending', 'Descending'], default='Ascending')
+    display_dataframe(expense_df, expense_option, expense_sort_option, expense_order_option)
 
     st.header("Income Transaction DataFrame")
-    income_option = st.multiselect("Category", list(income_dict.keys()), default=[])
-    display_dataframe(income_df, income_option)
+    income_option = st.selectbox("Category", list(income_dict.keys()), default=[])
+    income_sort_option = st.selectbox("Sort", ['Date', 'Name', 'Amount'], default='Date')
+    income_order_option = st.selectbox("Order", ['Ascending', 'Descending'], default='Ascending')
+    display_dataframe(income_df, income_option, income_sort_option, income_order_option)
 
 
 if __name__ == "__main__":

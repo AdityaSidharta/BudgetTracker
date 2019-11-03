@@ -18,6 +18,7 @@ emoji = "*"
 oyaml = "*"
 streamlit = "*"
 seaborn = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
