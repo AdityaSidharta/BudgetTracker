@@ -1,12 +1,13 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import streamlit as st
-from src.utils.directory import FINAL_PATH
 import os
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import streamlit as st
+
 from src.utils.color import color
+from src.utils.directory import FINAL_PATH
 
 
 def plot_category(input_df, input_dict):
@@ -58,13 +59,16 @@ def plot_historical_timeline(year, month, option, input_dict):
     categories = list(input_dict.keys())
     previous_dfs = {}
     for filename in os.listdir(FINAL_PATH):
-        file_type, file_year, file_month = filename.split("_")
-        if (file_type == "expense" and file_year == year and file_month < month) or (
-            file_type == "expense" and file_year < year
-        ):
-            previous_dfs["{}-{}".format(year, month)] = pd.read_csv(
-                os.path.join(FINAL_PATH, "expense_{}_{}.csv".format(file_year, file_month))
-            )
+        try:
+            file_type, file_year, file_month = filename.split("_")
+            if (file_type == "expense" and int(file_year) == year and int(file_month) < month) or (
+                file_type == "expense" and int(file_year) < year
+            ):
+                previous_dfs["{}-{}".format(year, month)] = pd.read_csv(
+                    os.path.join(FINAL_PATH, "expense_{}_{}.csv".format(file_year, file_month))
+                )
+        except ValueError:
+            pass
     if len(option) == 0:
         dates = []
         values = []
@@ -112,6 +116,19 @@ def display_dataframe(input_df, option, sort_option, order_option):
     else:
         ascending = False
     if len(option) == 0:
-        st.table(input_df.sort_values(sort_value, ascending=ascending))
+        df = input_df.sort_values(sort_value, ascending=ascending)
+        df = df[["made_on", "true_category", "description", "amount"]]
+        df["amount"] = df["amount"].apply(lambda x: "S$ {:.2f}".format(x))
+        df.columns = ["DATE", "CATEGORY", "DESCRIPTION", "AMOUNT"]
+        st.table(df)
     else:
-        st.table(input_df[input_df["true_category"] == option].sort_values(sort_value, ascending=ascending))
+        df = pd.DataFrame()
+        for category in option:
+            df = pd.concat(
+                [df, input_df[input_df["true_category"] == category]]
+            )
+        df = df.sort_values(sort_value, ascending=ascending)
+        df = df[["made_on", "true_category", "description", "amount"]]
+        df["amount"] = df["amount"].apply(lambda x: "S$ {:.2f}".format(x))
+        df.columns = ["DATE", "CATEGORY", "DESCRIPTION", "AMOUNT"]
+        st.table(df)

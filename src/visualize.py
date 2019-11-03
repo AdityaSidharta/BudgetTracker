@@ -16,7 +16,7 @@ from src.utils.streamlit import (
     display_category,
     plot_timeline,
     plot_historical_timeline,
-    display_dataframe
+    display_dataframe,
 )
 
 matplotlib.use("Agg")
@@ -48,7 +48,7 @@ def main(year: int = None, month: int = None):
     expense_category_df["amount"] = expense_category_df["amount"] * -1.0
     income_category_df = get_category(income_df)
 
-    st.title(emojize("Transaction details for {}, {} :smirk:".format(MONTHS[month], year), use_aliases=True))
+    st.title(emojize("Transaction details for {}, {}".format(MONTHS[month], year), use_aliases=True))
     st.subheader("Total Expenses : S${:.2f}".format(expense_df.amount.sum() * -1.0))
     st.subheader("Total Income : S${:.2f}".format(income_df.amount.sum()))
 
@@ -61,23 +61,23 @@ def main(year: int = None, month: int = None):
     display_category(income_category_df, income_dict)
 
     st.header("Expenses Timeline")
-    timeline_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
+    timeline_option = st.multiselect("Category", list(expense_dict.keys()), default=[], key="timeline_option")
     plot_timeline(expense_df, timeline_option, expense_dict)
 
     st.header("Historical Timeline")
-    historical_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
+    historical_option = st.multiselect("Category", list(expense_dict.keys()), default=[], key="historical_option")
     plot_historical_timeline(year, month, historical_option, expense_dict)
 
     st.header("Expenses Transaction DataFrame")
-    expense_option = st.selectbox("Category", list(expense_dict.keys()), default=[])
-    expense_sort_option = st.selectbox("Sort", ['Date', 'Name', 'Amount'], default='Date')
-    expense_order_option = st.selectbox("Order", ['Ascending', 'Descending'], default='Ascending')
+    expense_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
+    expense_sort_option = st.selectbox("Sort", ["Date", "Name", "Amount"], key='expense_sort_option')
+    expense_order_option = st.selectbox("Order", ["Ascending", "Descending"], key='expense_order_option')
     display_dataframe(expense_df, expense_option, expense_sort_option, expense_order_option)
 
     st.header("Income Transaction DataFrame")
-    income_option = st.selectbox("Category", list(income_dict.keys()), default=[])
-    income_sort_option = st.selectbox("Sort", ['Date', 'Name', 'Amount'], default='Date')
-    income_order_option = st.selectbox("Order", ['Ascending', 'Descending'], default='Ascending')
+    income_option = st.multiselect("Category", list(income_dict.keys()), default=[])
+    income_sort_option = st.selectbox("Sort", ["Date", "Name", "Amount"], key='income_sort_option')
+    income_order_option = st.selectbox("Order", ["Ascending", "Descending"], key='income_order_option')
     display_dataframe(income_df, income_option, income_sort_option, income_order_option)
 
 
