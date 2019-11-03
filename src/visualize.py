@@ -1,18 +1,23 @@
-import streamlit as st
 import datetime as dt
+import os
 
+import fire
 import matplotlib
 import pandas as pd
+import streamlit as st
+from emoji import emojize
+
 from src.utils.datetime import MONTHS
 from src.utils.directory import FINAL_PATH, EXPENSE_YAML_PATH, INCOME_YAML_PATH
-import fire
-import os
-from src.utils.io import load_yaml
-from emoji import emojize
 from src.utils.grouping import get_category
-from src.utils.streamlit import plot_category, display_category, plot_timeline#, plot_timeline, plot_historical_timeline, display_dataframe
+from src.utils.io import load_yaml
+from src.utils.streamlit import (
+    plot_category,
+    display_category,
+    plot_timeline,
+)  # , plot_timeline, plot_historical_timeline, display_dataframe
 
-matplotlib.use('Agg')
+matplotlib.use("Agg")
 
 
 def main(year: int = None, month: int = None):
@@ -38,11 +43,11 @@ def main(year: int = None, month: int = None):
     income_dict = load_yaml(INCOME_YAML_PATH)
 
     expense_category_df = get_category(expense_df)
-    expense_category_df['amount'] = expense_category_df['amount'] * -1.
+    expense_category_df["amount"] = expense_category_df["amount"] * -1.0
     income_category_df = get_category(income_df)
 
     st.title(emojize("Transaction details for {}, {} :smirk:".format(MONTHS[month], year), use_aliases=True))
-    st.subheader("Total Expenses : S${:.2f}".format(expense_df.amount.sum() * -1.))
+    st.subheader("Total Expenses : S${:.2f}".format(expense_df.amount.sum() * -1.0))
     st.subheader("Total Income : S${:.2f}".format(income_df.amount.sum()))
 
     st.header("Top expenses by category")
@@ -54,20 +59,21 @@ def main(year: int = None, month: int = None):
     display_category(income_category_df, income_dict)
 
     st.header("Expenses Timeline")
-    timeline_option = st.multiselect('Category', list(expense_dict.keys()), default=[])
+    timeline_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
     plot_timeline(expense_df, timeline_option, expense_dict)
 
     st.header("Historical Timeline")
-    historical_option = st.multiselect('Category', list(expense_dict.keys()), default=[])
+    historical_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
     plot_historical_timeline(year, month, historical_option)
 
     st.header("Expenses Transaction DataFrame")
-    expense_option = st.multiselect('Category', list(expense_dict.keys()), default=[])
+    expense_option = st.multiselect("Category", list(expense_dict.keys()), default=[])
     display_dataframe(expense_df, expense_option)
 
     st.header("Income Transaction DataFrame")
     income_option = st.multiselect("Category", list(income_dict.keys()), default=[])
     display_dataframe(income_df, income_option)
+
 
 if __name__ == "__main__":
     fire.Fire(main)

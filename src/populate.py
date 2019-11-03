@@ -5,11 +5,11 @@ import fire
 import pandas as pd
 from loguru import logger
 
-from src.utils.functions import get_customer, get_connections, get_transactions, get_accounts
-from src.utils.transactions import get_filename
 from src.utils.config import config
 from src.utils.directory import RAW_PATH
+from src.utils.functions import get_customer, get_connections, get_transactions, get_accounts
 from src.utils.logger import log_dictionary
+from src.utils.transactions import get_filename
 
 
 def main(year: int = None, month: int = None):

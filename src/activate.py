@@ -1,7 +1,7 @@
 from loguru import logger
 
-from src.utils.functions import get_customer, connect_session
 from src.utils.config import config
+from src.utils.functions import get_customer, connect_session
 
 
 def main():
