@@ -1,4 +1,4 @@
-# saltedge_python
+# BudgetTracker
 
 The goal of this repository is to provide an automated system for Budget Tracking. This repository should be run once per month, providing you with the following functionality:
 
